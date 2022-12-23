@@ -1,0 +1,44 @@
+##########################################INFO##########################################
+--------------------ADVANCED AND ROBOT PROGRAMMING FIRST ASSIGNMENT--------------------
+
+info.txt file contains useful informations about the project.
+
+Miriam Anna Ruggero(4881702)
+Alessio Mura (4861320)
+Ivan Terrile (4851947)
+
+First assignment of advanced and robot programming class concerns the development
+of a robot simulator which simulates the behaviour of a Hoist.
+
+The repository is organized as follows:
+- the `src` folder contains the source code for all the processes
+- the `include` folder contains all the data structures and methods used within the ncurses framework to build the two GUIs
+
+After compiling the program other two directories will be created:
+
+- the `bin` folder contains all the executable files
+- the `log` folder will contain all the log files of the processes after the program will be executed
+
+
+To compile:
+
+$ bash compile.sh
+
+
+After that run the program with the command:
+
+$ bash ./run.sh
+
+
+----------------------------------SIMULATOR BEHAVIOR-----------------------------------
+
+The hoist simulator has 2 d.o.f. and two different consoles allows the user to activate
+the hoist. 
+The command console is where the user can give the command to move the hoist along the
+two directions, while the inspection console is where the position is printed. In the
+inspection console the user can also give two commands one to stop the movement and 
+one to reset the position. Other 3 processes are thought to simulate the motors.
+There is also a watchdog in the master process  which checks the previous 5 processes periodically, and sends 
+a reset in case all processes did nothing for 60 seconds.
+Processes communicate using named pipes and signals, everything is managed by the master
+process.
