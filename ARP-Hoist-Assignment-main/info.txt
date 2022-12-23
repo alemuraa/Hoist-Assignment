@@ -22,7 +22,7 @@ After compiling the program other two directories will be created:
 
 To compile:
 
-$ bash compile.sh
+$ bash ./compile.sh
 
 
 After that run the program with the command:
